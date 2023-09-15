@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <!-- link css  -->
+    <link rel="stylesheet" href="css/style.css">
+    <title>Rekam Medis</title>
+</head>
+<body>
+
+    <!-- sidebar -->
+    <div class="sidebar">
+        <a href="#" class="logo" id="logo">
+            <img src="images/logo.png" alt="">
+            <div class="logo-name"><span>Klinik</span><br><span>Bhayangkara</span><br><span>Polres Madiun</span></div>
+        </a>
+        <ul class="side-menu">
+            <li class="active"><a href="#"><i class='bx bxs-dashboard'></i>Dashboard</a></li>
+            <li><a href="datadoc.html"><i class='bx bxs-user'></i>Data Dokter</a></li>
+            <li><a href="#"><i class='bx bx-user' ></i>Data Pasien</a></li>
+            <li><a href="#"><i class='bx bx-home-heart'></i>Ruangan</a></li>
+            <li><a href="#"><i class='bx bxs-capsule' ></i>Data Obat</a></li>
+            <li><a href="#"><i class='bx bx-notepad' ></i>Rekam Medis</a></li>
+            <li><a href="#"><i class='bx bxs-report' ></i>Laporan</a></li>
+        </ul>
+        <ul class="side-menu">
+            <li>
+                <a href="#" class="logout">
+                    <i class='bx bx-log-out-circle' ></i>
+                    Logout
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!-- end of sidebar -->
+
+    <!-- main content  -->
+    <div class="content">
+        <!-- navbar -->
+        <nav>
+            <i class='bx bx-menu-alt-left' ></i>
+            <form action="#">
+                <div class="form-input">
+                    <input type="search" placeholder="Search">
+                    <button class="search-btn" type="submit"><i class='bx bx-search' ></i></button>
+                </div>
+            </form>
+            <input type="checkbox" id="theme-toggle" hidden>
+            <label for="theme-toggle" class="theme-toggle"></label>
+            <a href="#" class="notif">
+                <i class='bx bx-bell' ></i>
+                <span class="count">12</span>
+            </a>
+            <a href="#" class="profile">
+                <img src="images/profile1.png">
+            </a>
+        </nav>
+        <!-- end of navbar  -->
+
+        <!-- header  -->
+        <main>
+            <div class="header">
+                <div class="left">
+                    <h1>Dashboard</h1>
+                    <ul class="breadcrumb">
+                        <li><a href="#">Home</a></li>
+                        /
+                        <li><a href="#" class="active">Dashboard</a></li>
+                    </ul>
+                </div>
+                <!-- <a href="#" class="report">
+                    <i class='bx bx-cloud-download'></i>
+                    <span>Download CSV</span>
+                </a> -->
+            </div>
+
+            <!-- insight -->
+            <ul class="insight">
+                <li>
+                    <i class='bx bxs-group' ></i>
+                    <span class="info">
+                        <h3>100</h3>
+                        <p>Pasien</p>
+                    </span>
+                </li>
+                <li>
+                    <i class='bx bx-group' ></i>
+                    <span class="info">
+                        <h3>15</h3>
+                        <p>Dokter</p>
+                    </span>
+                </li>
+                <li>
+                    <i class='bx bx-home-heart'></i>
+                    <span class="info">
+                        <h3>5</h3>
+                        <p>Ruangan</p>
+                    </span>
+                </li>
+                <li>
+                    <i class='bx bxs-capsule' ></i>
+                    <span class="info">
+                        <h3>21</h3>
+                        <p>Obat</p>
+                    </span>
+                </li>
+            </ul>
+            <!-- end of insight -->
+
+            <!-- tambah rekam medis mulai  -->
+            <!-- <div class="btn-tambah">
+                <li>
+                    <i class='bx bxs-group' ></i>
+                    <span class="info">
+                        <h3>Tambah Data Pasien</h3>
+                    </span>
+                </li>
+                <li>
+                    <i class='bx bxs-capsule' ></i>
+                    <span class="info">
+                        <h3>21</h3>
+                    </span>
+                </li>
+            </div> -->
+
+            <!-- end of tambah rekam medis  -->
+
+        </main>
+    </div>
+
+    
+
+
+    <script src="js/script.js"></script>
+</body>
+</html>
