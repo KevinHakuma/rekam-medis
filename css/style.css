@@ -23,13 +23,8 @@
     font-family: 'Poppins', sans-serif;
 }
 
-.large-logo {
-    width: 200px;
-    height: auto;
-    transition: all 0.3s ease;
-}
 
-.bx {
+  .bx {
     font-size: 1.7rem;
 }
 
@@ -434,49 +429,374 @@ body {
 }
 
 
-
-/* .content main .btn-tambah li .info h3 {
-    font-size: 24px;
-    font-weight: 600;
-    color: var(--light);
+/* mulai tabel pasien */
+.table-container {
+  /* overflow-x: auto; */
+  background-color: var(--light);
+  border-radius: 10px;
+  margin-top: 30px;
+}
+.table-container .judul-table{
+    border-bottom: 1px solid #c2c2c2;
+}
+.table-container .judul-table h4{
+    padding: 15px;
+    font-size: 20px;
+    color: var(--dark);
+}
+.table-header {
+    margin: 0 auto;
+    max-width: 95%;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
-.content main .btn-tambah li .info p {
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 10px;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 5px;
+  text-align: center;
+  background-color: var(--grey);
+  color: var(--dark);
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+th {
+  background-color:  var(--primary);
+  color: white;
+}
+
+/* Gaya tombol Edit */
+.table-container .btn-edit i {
+    background-color: var(--primary);
+    border: 1px solid var(--primary);
+    border-radius: 5px; /* Untuk membuat ikon menjadi lingkaran */
+    display: inline-block; /* Untuk menjaga ikon dalam kotak yang sama */
+    width: 55px; /* Lebar ikon */
+    height: 40px; /* Tinggi ikon */
+    line-height: 40px; /* Sesuaikan dengan tinggi ikon */
+    text-align: center; /* Tengahkan ikon secara horizontal */
+    justify-content: center;
+    cursor: pointer;
+    color: #fff;
+    margin-right: 10px;
+    transition: background-color 0.3s;
+}
+
+.table-container .btn-edit i:hover {
+    background-color: #456993;
+}
+
+/* Gaya tombol Delete */
+.table-container .btn-delete i {
+    background-color: var(--danger);
+    border: 1px solid var(--danger);
+    border-radius: 5px; /* Untuk membuat ikon menjadi lingkaran */
+    display: inline-block; /* Untuk menjaga ikon dalam kotak yang sama */
+    width: 55px; /* Lebar ikon */
+    height: 40px; /* Tinggi ikon */
+    line-height: 40px; /* Sesuaikan dengan tinggi ikon */
+    justify-content: center;
+    text-align: center; /* Tengahkan ikon secara horizontal */
+    cursor: pointer;
+    color: #fff;
+    margin-right: 10px;
+    transition: background-color 0.3s;
+}
+
+.table-container .btn-delete i:hover {
+    background-color: #860f0f;
+}
+
+.table-container .btn-add i {
+    background-color: var(--success);
+    border: 1px solid var(--success);
+    border-radius: 5px; /* Untuk membuat ikon menjadi lingkaran */
+    display: inline-block; /* Untuk menjaga ikon dalam kotak yang sama */
+    width: 55px; /* Lebar ikon */
+    height: 40px; /* Tinggi ikon */
+    line-height: 40px; /* Sesuaikan dengan tinggi ikon */
+    justify-content: center;
+    text-align: center; /* Tengahkan ikon secara horizontal */
+    cursor: pointer;
+    color: #fff;
+    margin-right: 10px;
+    transition: background-color 0.3s;
+}
+
+.table-container .btn-add i:hover {
+    background-color: #235c26;
+}
+
+.table-container .btn-view-qr i {
+    background-color: var(--primary);
+    border: 1px solid var(--primary);
+    border-radius: 5px; /* Untuk membuat ikon menjadi lingkaran */
+    display: inline-block; /* Untuk menjaga ikon dalam kotak yang sama */
+    width: 55px; /* Lebar ikon */
+    height: 40px; /* Tinggi ikon */
+    line-height: 40px; /* Sesuaikan dengan tinggi ikon */
+    justify-content: center;
+    text-align: center; /* Tengahkan ikon secara horizontal */
+    cursor: pointer;
+    color: #fff;
+    margin-right: 10px;
+    transition: background-color 0.3s;
+}
+
+.table-container .btn-view-qr i:hover {
+    background-color: #456993;
+}
+
+.table-footer h4{
+    border-top: 1px solid #c2c2c2;
+    padding: 15px;
+    font-size: 20px;
+    color: var(--dark);
+}
+/* tabel pasien selesai */
+
+/* pagination mulai  */
+.table-footer {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.pagination {
+    display: inline-block;
+    padding-left: 0;
+    margin: 0;
+    border-radius: .25rem;
+}
+
+.page-item {
+    display: inline;
+}
+
+.page-item.disabled .page-link {
+    color: #6c757d;
+    background-color: #fff;
+    border-color: #dee2e6;
+    cursor: not-allowed;
+}
+
+.page-item.active .page-link {
+    z-index: 3;
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.page-item .page-link {
+    position: relative;
+    display: block;
+    padding: .5rem .75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: #007bff;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    text-align: center;
+    text-decoration: none;
+}
+
+.page-link:hover {
+    z-index: 2;
+    color: #0056b3;
+    text-decoration: none;
+    background-color: #e9ecef;
+    border-color: #dee2e6;
+}
+
+.table-footer .pagination {
+    margin-left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.table-footer .pagination .page-item {
+    margin: 0 5px;
+    list-style: none;
+}
+
+.table-footer .pagination .page-item .page-link {
+    display: block;
+    padding: 10px 15px;
+    text-align: center;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.table-footer .pagination .page-item .page-link:hover {
+    background-color: #aaaaaa;
+    color: #fff;
+    border-color: #aaaaaa;
+}
+
+.table-footer .pagination .page-item.active .page-link {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+}
+
+/* pagination selesai  */
+
+/* form input pasien  */
+.form-step {
+    display: none;
+}
+
+.form-step.active {
+    display: block;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
     color: var(--dark);
 }
 
-.content main .btn-tambah {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    grid-gap: 24px;
-    margin-top: 36px;
-}
-
-.content main .btn-tambah li {
-    padding: 20px;
-    background: var(--danger);
-    border-radius: 20px;
-    display: flex;
-    align-items: center;
-    grid-gap: 24px;
-    cursor: pointer;
-    margin-top: 20px;
-}
-
-.content main .btn-tambah li .bx {
-    width: 80px;
-    height: 80px;
+input[type="text"],
+input[type="number"],
+input[type="date"],
+input[type="tel"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid var(--dark-grey);
     border-radius: 10px;
-    font-size: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 50px;
-    color: var(--light);
-} */
+}
+
+button {
+    padding: 10px 20px;
+    background-color: var(--primary);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+#step-1 {
+    background-color: var(--light);
+    padding: 20px;
+    display: block;
+    margin-top: 35px;
+    border-radius: 20px;
+}
+
+#step-1 h2 {
+    margin-bottom: 20px;
+    color: var(--dark);
+}
+
+#step-2 {
+    background-color: var(--light);
+    padding: 20px;
+    margin-top: 35px;
+    display: none;
+    border-radius: 20px;
+}
+
+#step-2 h2 {
+    margin-bottom: 20px;
+    color: var(--dark);
+}
+
+.form-btn {
+    padding: 10px 20px;
+    background-color: var(--primary);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 10px;
+}
+.form-btn:hover {
+    background-color: #1f6abb; /* Mengubah warna latar belakang saat dihover */
+}
 
 
+/* form input pasien selesai  */
 
+/* detail mulai */
+.table-container .content-detail p {
+    margin: 0 auto;
+    max-width: 95%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: var(--grey);
+}
+/* detail selesai */
+
+/* profile dropdown mulai */
+.profile-dropdown {
+    position: relative;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.profile-options {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: var(--primary);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    z-index: 1;
+    width: 200px; /* Lebar kotak */
+    height: 125px; /* Tinggi kotak */
+    padding: 10px;
+}
+
+.profile-dropdown:hover .profile-options {
+    display: block;
+    border-radius: 10px;
+}
+
+.profile-options span {
+    display: block;
+    padding: 10px 20px;
+    color: #f5f5f5;
+    font-weight: bold;
+    text-align: center;
+}
+
+.profile-options a {
+    display: block;
+    padding: 10px 20px;
+    text-decoration: none;
+    text-align: center;
+    color: #f5f5f5;
+    background-color: #1982cc;
+    border-radius: 10px;
+}
+
+.profile-options a:hover {
+    background-color: #588bafa1;
+    border-radius: 10px;
+    max-width: 100%;
+    color: #f5f5f5;
+
+}
+/* profile dropdown selesai */
 
 
 
@@ -538,3 +858,90 @@ body {
 
 
 }
+
+/* Gaya untuk elemen popup QR code */
+#qrcode-popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#qrcode-content {
+    background-color: #fff;
+    /* padding: 20px; */
+    top: 20%;
+    left: 45%;
+    width: 300px;
+    height: 300px;
+    text-align: center;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+.close-qrcode {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    /* margin-top: 10px; */
+    /* padding: 5px 10px;s */
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 1001;
+}
+
+.close-qrcode:hover {
+    background-color: #555;
+}
+
+#qrcode {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 70%;
+}
+#qrcode canvas{
+    width: 100%;
+    height: 100%;
+}
+
+
+/* Gaya untuk submenu */
+.side-menu .parent:hover .sub-menu {
+    display: block;
+}
+
+.sub-menu {
+    display: none;
+    list-style: none;
+    margin-top: 2px;
+    position: relative;
+}
+
+.sub-menu li {
+    margin: 2px 0;
+}
+
+.sub-menu a {
+    color: #333;
+    text-decoration: none;
+    display: block;
+    padding: 5px 0;
+}
+
+.sub-menu a:hover {
+    color: #007bff;
+}
+

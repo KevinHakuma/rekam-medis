@@ -1,0 +1,850 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --light: #f6f6f9;
+    --primary: #6da3ca;
+    --light-primary: #cfe8ff;
+    --grey: #eee;
+    --dark-grey: #aaaaaa;
+    --dark: #363949;
+    --danger: #d32f2f;
+    --light-danger: #fecdd3;
+    --warning: #fbc02d;
+    --light-warning: #fff2c6;
+    --success: #388e3c;
+    --light-success: #bbf7d0;
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+  .bx {
+    font-size: 1.7rem;
+}
+
+a{
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+html{
+    overflow-x: hidden;
+}
+
+body.dark {
+    --light: #181a1e;
+    --grey: #25252c;
+    --dark: #fbfbfb;
+}
+
+body {
+    background: var(--grey);
+    overflow-x: hidden;
+}
+
+/* sidebar  */
+/* .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: var(--light);
+    width: 230px;
+    height: 100%;
+    z-index: 2000;
+    overflow-x: hidden;
+    scrollbar-width: none;
+    transition: all 0.3s ease;
+}
+
+.sidebar::-webkit-scrollbar {
+    display: none;
+}
+
+.sidebar.close {
+    width: 60px;
+}
+
+.sidebar .logo img {
+    width: 50px;
+    height: 70px;
+    margin-left: -5px;
+}
+
+.sidebar .logo {
+    font-size: 15px;
+    font-weight: 700;
+    height: 56px;
+    display: flex;
+    align-self: center;
+    color: var(--primary);
+    z-index: 500;
+    padding-bottom: 50px;
+    box-sizing: content-box;
+    margin-top: 15px;
+    margin-left: 15px;
+}
+.sidebar .logo span {
+    padding-left: 10px;
+}
+
+.sidebar .logo .bx {
+    min-width: 60px;
+    display: flex;
+    justify-content: center;
+    font-size: 2.2rem;
+}
+
+.sidebar .side-menu {
+    width: 100%;
+    margin-top: 48px;
+}
+
+.sidebar .side-menu li {
+    height: 48px;
+    background: transparent;
+    margin-left: 6px;
+    border-radius: 48px 0 0 48px;
+    padding: 4px;
+}
+
+.sidebar .side-menu li.active {
+    background: var(--grey);
+    position: relative;
+}
+
+.sidebar .side-menu li.active::before {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    top: -40px;
+    right: 0;
+    box-shadow: 20px 20px 0 var(--grey);
+    z-index: -1;
+}
+
+.sidebar .side-menu li.active::after {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    bottom: -40px;
+    right: 0;
+    box-shadow: 20px -20px 0 var(--grey);
+    z-index: -1;
+}
+
+.sidebar .side-menu li a {
+    width: 100%;
+    height: 100%;
+    background: var(--light);
+    display: flex;
+    align-items: center;
+    border-radius: 48px;
+    font-size: 16px;
+    color: var(--dark);
+    white-space: nowrap;
+    overflow-x: hidden;
+    transition: all 0.3s ease;
+}
+
+.sidebar .side-menu li.active a {
+    color: rgb(135, 135, 239);
+}
+
+.sidebar.close .side-menu li a {
+    width: calc(48px - (4px * 2));
+    transition: all 0.3s ease;
+}
+
+.sidebar .side-menu li a .bx {
+    min-width: calc(60px - ((4px + 6px) * 2));
+    display: flex;
+    font-size: 1.6rem;
+    justify-content: center;
+}
+
+.sidebar .side-menu li a.logout {
+    color: var(--danger);
+} */
+/* end of side bar  */
+
+
+tr, th, td {
+    color: var(--dark);
+}
+
+
+/* sidebar  */
+
+
+/* content  */
+.content {
+    position: relative;
+    width: calc(100% - 230px);
+    left: 20px;
+    transition: all 0.3s ease;
+}
+.sidebar.close~.content {
+    width: calc(100% - 60px);
+    left: 60px;
+}
+
+.content nav {
+    height: 56px;
+    background: var(--light);
+    padding: 0 24px 0 0;
+    display: flex;
+    align-items: center;
+    grid-gap: 24px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.content nav::before {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    bottom: -40px;
+    left: 0;
+    border-radius: 50%;
+    box-shadow: -20px -20px 0 var(--light);
+}
+
+.content nav a{
+    color: var(--dark);
+}
+
+.content nav .bx.bx-menu-alt-left {
+    cursor: pointer;
+    color: var(--dark);
+}
+
+.content nav form {
+    max-width: 400px;
+    width: 100%;
+    margin-right: auto;
+}
+
+.content nav form .form-input {
+    display: flex;
+    align-items: center;
+    height: 36px;
+}
+
+.content nav form .form-input input {
+    flex-grow: 1;
+    padding: 0 16px;
+    height: 100%;
+    border: none;
+    background: var(--grey);
+    border-radius: 36px 0 0 36px;
+    outline: none;
+    width: 100%;
+    color: var(--dark);
+}
+
+.content nav form .form-input button {
+    width: 80px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--primary);
+    color: var(--light);
+    font-size: 18px;
+    border: none;
+    outline: none;
+    border-radius: 0 36px 36px 0;
+    cursor: pointer;
+}
+
+.content nav .notif {
+    font-size: 20px;
+    position: relative;
+}
+
+.content nav .notif .count {
+    position: absolute;
+    top: -6px;
+    right: -6px;
+    width: 20px;
+    height: 20px;
+    background: var(--danger);
+    border-radius: 50%;
+    color: var(--light);
+    border: 2px solid var(--light);
+    font-weight: 700;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content nav .profile img {
+    width: 36px;
+    height: 36px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.content nav .theme-toggle {
+    display: block;
+    min-width: 50px;
+    height: 25px;
+    background: var(--grey);
+    cursor: pointer;
+    border-radius: 25px;
+    position: relative;
+}
+
+.content nav .theme-toggle::before {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    bottom: 2px;
+    width: calc(25px - 4px);
+    background: var(--primary);
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.content nav #theme-toggle:checked+.theme-toggle::before {
+    left: calc(100% - (25px - 4px) - 2px);
+}
+
+.content main {
+    width: 100%;
+    padding: 36px 24px;
+    max-height: calc(100vh - 56px);
+}
+
+.content main .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    grid-gap: 16px;
+    flex-wrap: wrap;
+    /* left: 100px; */
+}
+
+.content main .header .left h1 {
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--dark);
+}
+
+.content main .header .left .breadcrumb {
+    display: flex;
+    align-items: center;
+    grid-gap: 16px;
+}
+
+.content main .header .left .breadcrumb li {
+    color: var(--dark);
+}
+
+.content main .header .left .breadcrumb li a {
+    color: var(--dark-grey);
+    pointer-events: none;
+}
+
+.content main .header .left .breadcrumb li a.active {
+    color: var(--primary);
+    pointer-events: none;
+}
+
+.content main .header .download {
+    height: 36px;
+    padding: 0 16px;
+    border-radius: 36px;
+    background: var(--success);
+    color: var(--light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-gap: 10px;
+    font-weight: 500;
+}
+
+.content main .header .back {
+    height: 36px;
+    padding: 0 16px;
+    border-radius: 36px;
+    background: var(--primary);
+    color: var(--light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-gap: 10px;
+    font-weight: 500;
+    margin-right: 150px;
+    margin-top: 0px;
+}
+
+.content main .header .report {
+    height: 36px;
+    padding: 0 16px;
+    border-radius: 36px;
+    background: var(--primary);
+    color: var(--light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-gap: 10px;
+    font-weight: 500;
+}
+
+.content main .insight {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-gap: 24px;
+    margin-top: 36px;
+}
+
+.content main .insight li {
+    padding: 24px;
+    background: var(--light);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    grid-gap: 24px;
+    cursor: pointer;
+}
+
+.content main .insight li .bx {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    font-size: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content main .insight li:nth-child(1) .bx {
+    background: var(--light-primary);
+    color: var(--primary);
+}
+.content main .insight li:nth-child(2) .bx {
+    background: var(--light-warning);
+    color: var(--warning);
+}
+.content main .insight li:nth-child(3) .bx {
+    background: var(--light-success);
+    color: var(--success);
+}
+.content main .insight li:nth-child(4) .bx {
+    background: var(--light-danger);
+    color: var(--danger);
+}
+
+.content main .insight  li .info h3 {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+.content main .insight li .info p {
+    color: var(--dark);
+}
+
+
+/* mulai tabel pasien */
+.table-container {
+  overflow-x: auto;
+  background-color: var(--light);
+  border-radius: 10px;
+  margin-top: 30px;
+}
+.table-container .judul-table{
+    border-bottom: 1px solid #c2c2c2;
+}
+.table-container .judul-table h4{
+    padding: 15px;
+    font-size: 20px;
+    color: var(--dark);
+}
+.table-header {
+    margin: 0 auto;
+    max-width: 95%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+table {
+    width: 100%;
+    /* border-collapse: collapse; */
+    border-radius: 10px;
+  }
+
+table th{
+    text-align: left;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 15px;
+    padding-left: 10px;
+    font-size: 15px;
+}
+
+table td{
+    text-align: left;
+    padding-left: 50px;
+    padding-right: 10px;
+    border: #181a1e;
+}
+
+
+/* Gaya tombol Edit */
+.table-container .btn-edit i {
+    background-color: var(--primary);
+    border: 1px solid var(--primary);
+    border-radius: 5px; /* Untuk membuat ikon menjadi lingkaran */
+    display: inline-block; /* Untuk menjaga ikon dalam kotak yang sama */
+    width: 55px; /* Lebar ikon */
+    height: 40px; /* Tinggi ikon */
+    line-height: 40px; /* Sesuaikan dengan tinggi ikon */
+    text-align: center; /* Tengahkan ikon secara horizontal */
+    justify-content: center;
+    cursor: pointer;
+    color: #fff;
+    margin-right: 10px;
+    transition: background-color 0.3s;
+}
+
+.table-container .btn-edit i:hover {
+    background-color: #456993;
+}
+
+/* Gaya tombol Delete */
+.table-container .btn-delete i {
+    background-color: var(--danger);
+    border: 1px solid var(--danger);
+    border-radius: 5px; /* Untuk membuat ikon menjadi lingkaran */
+    display: inline-block; /* Untuk menjaga ikon dalam kotak yang sama */
+    width: 55px; /* Lebar ikon */
+    height: 40px; /* Tinggi ikon */
+    line-height: 40px; /* Sesuaikan dengan tinggi ikon */
+    justify-content: center;
+    text-align: center; /* Tengahkan ikon secara horizontal */
+    cursor: pointer;
+    color: #fff;
+    margin-right: 10px;
+    transition: background-color 0.3s;
+}
+
+.table-container .btn-delete i:hover {
+    background-color: #860f0f;
+}
+
+.table-container .btn-view-qr i {
+    background-color: var(--primary);
+    border: 1px solid var(--primary);
+    border-radius: 5px; /* Untuk membuat ikon menjadi lingkaran */
+    display: inline-block; /* Untuk menjaga ikon dalam kotak yang sama */
+    width: 55px; /* Lebar ikon */
+    height: 40px; /* Tinggi ikon */
+    line-height: 40px; /* Sesuaikan dengan tinggi ikon */
+    justify-content: center;
+    text-align: center; /* Tengahkan ikon secara horizontal */
+    cursor: pointer;
+    color: #fff;
+    margin-right: 10px;
+    transition: background-color 0.3s;
+}
+
+.table-container .btn-view-qr i:hover {
+    background-color: #456993;
+}
+
+.table-footer h4{
+    padding: 15px;
+    font-size: 20px;
+    color: var(--dark);
+}
+/* tabel pasien selesai */
+
+/* pagination mulai  */
+.table-footer {
+    border-top: 1px solid #c2c2c2;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.pagination {
+    display: inline-block;
+    padding-left: 0;
+    margin: 0;
+    border-radius: .25rem;
+}
+
+.page-item {
+    display: inline;
+}
+
+.page-item.disabled .page-link {
+    color: #6c757d;
+    background-color: #fff;
+    border-color: #dee2e6;
+    cursor: not-allowed;
+}
+
+.page-item.active .page-link {
+    z-index: 3;
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.page-item .page-link {
+    position: relative;
+    display: block;
+    padding: .5rem .75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: #007bff;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+    text-align: center;
+    text-decoration: none;
+}
+
+.page-link:hover {
+    z-index: 2;
+    color: #0056b3;
+    text-decoration: none;
+    background-color: #e9ecef;
+    border-color: #dee2e6;
+}
+
+.table-footer .pagination {
+    margin-left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.table-footer .pagination .page-item {
+    margin: 0 5px;
+    list-style: none;
+}
+
+.table-footer .pagination .page-item .page-link {
+    display: block;
+    padding: 10px 15px;
+    text-align: center;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.table-footer .pagination .page-item .page-link:hover {
+    background-color: #aaaaaa;
+    color: #fff;
+    border-color: #aaaaaa;
+}
+
+.table-footer .pagination .page-item.active .page-link {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+}
+
+/* pagination selesai  */
+
+/* form input pasien  */
+.form-step {
+    display: none;
+}
+
+.form-step.active {
+    display: block;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    color: var(--dark);
+}
+
+input[type="text"],
+input[type="date"],
+input[type="tel"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid var(--dark-grey);
+    border-radius: 10px;
+}
+
+button {
+    padding: 10px 20px;
+    background-color: var(--primary);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+#step-1 {
+    background-color: var(--light);
+    padding: 20px;
+    display: block;
+    margin-top: 35px;
+    border-radius: 20px;
+}
+
+#step-1 h2 {
+    margin-bottom: 20px;
+    color: var(--dark);
+}
+
+#step-2 {
+    background-color: var(--light);
+    padding: 20px;
+    margin-top: 35px;
+    display: none;
+    border-radius: 20px;
+}
+
+#step-2 h2 {
+    margin-bottom: 20px;
+    color: var(--dark);
+}
+
+.form-btn {
+    padding: 10px 20px;
+    margin-top: 20px;
+    margin-left: 100px;
+    margin-bottom: 20px;
+    background-color: var(--primary);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 10px;
+    justify-content: center;
+}
+.form-btn:hover {
+    background-color: #1f6abb; /* Mengubah warna latar belakang saat dihover */
+}
+
+
+/* form input pasien selesai  */
+
+/* detail mulai */
+.table-container .content-detail p {
+    margin: 0 auto;
+    max-width: 95%;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: var(--grey);
+}
+
+.content-detail form{
+    padding-left: 10px;
+}
+
+.content-detail td {
+    padding: 10px;
+    /* border-bottom: 1px solid; */
+}
+
+/* .content-detail td textarea{
+    padding-top: -10rem
+} */
+
+
+
+
+/* detail selesai */
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 768px){
+    .content {
+        width: 100%;
+        margin-left: -10px;
+    }
+
+    .table-container {
+        width: 100%;
+    }
+
+    .content-detail td textarea{
+        padding-top: -10rem
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .content nav form .form-input input {
+        display: none;
+    }
+
+    .content nav form .form-input button {
+        width: auto;
+        height: auto;
+        background: transparent;
+        color: var(--dark);
+        border-radius: none;
+    }
+
+    .content nav form.show .form-input input {
+        display: block;
+        width: 100%;
+    }
+
+    .content nav form.show .form-input button {
+        width: 36px;
+        height: 100%;
+        color: var(--light);
+        background: var(--danger);
+        border-radius: 0 36px 36px 0;
+    } 
+
+    .content nav form.show~.notif, .content nav form.show~.profile {
+        display: none;
+    }
+
+    .content-detail td textarea{
+        padding-top: -10rem
+    }
+
+
+
+
+}

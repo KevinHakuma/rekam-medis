@@ -54,3 +54,109 @@ toggler.addEventListener('change', function ()  {
         document.body.classList.remove('dark');
     }
 });
+
+
+
+$(document).ready(function () {
+    // Inisialisasi tooltip pada elemen-elemen yang memiliki data-toggle="tooltip"
+    $('[data-toggle="tooltip"]').tooltip();
+});
+
+function showPatientDetail(button) {
+    // Mengambil nama pasien dari atribut data-nama tombol
+    var namaPasien = button.getAttribute('data-nama');
+    
+    // Menampilkan detail pasien sesuai dengan nama
+    var detailPasien = document.getElementById('detail-pasien-' + namaPasien);
+    if (detailPasien) {
+        detailPasien.style.display = 'block';
+    }
+}
+
+// Fungsi untuk menampilkan QR code dalam popup
+function generateQRCode(namaPasien) {
+    var encodedNamaPasien = encodeURIComponent(namaPasien);
+    var qrcode = new QRCode(document.getElementById("qrcode"), {
+        // text: "http://medical-record.great-site.net/pdf_generator.php?nama=" + encodedNamaPasien,
+        text: "localhost/rekamMedis/web_dokter/func/detail_pasien.php?nama=" + encodedNamaPasien,
+        width: 128,
+        height: 128
+    });
+
+    // Tampilkan elemen popup QR code
+    var qrcodePopup = document.getElementById("qrcode-popup");
+    qrcodePopup.style.display = "block";
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+    var downloadButton = document.getElementById('downloadButton');
+
+    downloadButton.addEventListener('click', function () {
+        // Dapatkan parameter nama dari URL
+        var urlParams = new URLSearchParams(window.location.search);
+        var namaPasien = urlParams.get('nama');
+
+        // Pastikan namaPasien tidak null atau undefined sebelum digunakan
+        if (namaPasien) {
+            var encodedNamaPasien = encodeURIComponent(namaPasien);
+            
+            // Gantilah URL berikut dengan URL situs web yang ingin Anda tuju
+            var webURL = 'http://localhost/rekamMedis/pdf_generator.php?nama=' + encodedNamaPasien;
+
+            // Mengarahkan pengguna ke situs web
+            window.location.href = webURL;
+        } else {
+            alert('Data nama pasien tidak ditemukan.');
+        }
+    });
+});
+
+
+
+// Fungsi untuk menutup popup QR code
+document.getElementById("close-qrcode").addEventListener("click", function() {
+    var qrcodePopup = document.getElementById("qrcode-popup");
+    qrcodePopup.style.display = "none";
+
+    // Close the Bootstrap modal using jQuery
+    $('#myModal').modal('hide');
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    var profileDropdown = document.querySelector(".profile-dropdown");
+
+    profileDropdown.addEventListener("click", function (e) {
+        var profileOptions = this.querySelector(".profile-options");
+        if (profileOptions.style.display === "block") {
+            profileOptions.style.display = "none";
+        } else {
+            profileOptions.style.display = "block";
+        }
+        e.stopPropagation();
+    });
+
+    // Menutup dropdown jika di-klik di luar dropdown
+    document.addEventListener("click", function () {
+        var profileOptions = profileDropdown.querySelector(".profile-options");
+        profileOptions.style.display = "none";
+    });
+});
+
+
+
+// Ambil semua elemen yang memiliki kelas "parent" dalam menu
+const parentItems = document.querySelectorAll('.side-menu .parent');
+
+// Loop melalui semua elemen "parent" dan tambahkan event listener
+parentItems.forEach((parentItem) => {
+    // Tambahkan event listener untuk setiap elemen "parent"
+    parentItem.addEventListener('click', (event) => {
+        // Jika submenu ada, toggle tampilan submenu
+        const subMenu = parentItem.querySelector('.sub-menu');
+        if (subMenu) {
+            event.preventDefault(); // Hindari navigasi ke tautan utama
+            subMenu.classList.toggle('active');
+        }
+    });
+});
+
